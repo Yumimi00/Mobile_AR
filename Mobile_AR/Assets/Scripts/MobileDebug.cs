@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MobileDebug : MonoBehaviour
 {
@@ -18,5 +19,9 @@ public class MobileDebug : MonoBehaviour
     public void OnPressButon()
     {
         Debug.Log("Button Pressed");
+    }
+    public void LoadScene (string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }

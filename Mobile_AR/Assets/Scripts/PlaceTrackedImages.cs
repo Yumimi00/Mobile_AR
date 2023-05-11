@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,11 @@ public class PlaceTrackedImages : MonoBehaviour
 
     public GameObject[] ArPrefabs;
 
-    public readonly Dictionary<string, GameObject> _instantiatedPrefabs = new Dictionary<string, GameObject>();
+    private readonly Dictionary<string, GameObject> _instantiatedPrefabs = new Dictionary<string, GameObject>();
+    void Awake()
+    {
+        _trackedImageManger = GetComponent<ARTrackedImageManager>();
+    }
 
     void OnEnable()
     {
@@ -31,24 +36,30 @@ public class PlaceTrackedImages : MonoBehaviour
 
             foreach (var curPrefab in ArPrefabs)
             {
-                if (string.Compare(curPrefab.name, imageName, System.StringComparison.OrdinalIgnoreCase)==0 && !_instantiatedPrefabs.ContainsKey(imageName))
+                if (string.Compare(curPrefab.name, imageName, StringComparison.OrdinalIgnoreCase) == 0 && !_instantiatedPrefabs.ContainsKey(imageName))
                 {
                     var newPrefab = Instantiate(curPrefab, trackedImage.transform);
                     _instantiatedPrefabs[imageName] = newPrefab;
+                    Debug.Log("Instantiated " + imageName);
                 }
             }
         }
 
         foreach (var trackedImage in eventArgs.updated)
         {
-            _instantiatedPrefabs[trackedImage.referenceImage.name].SetActive(trackedImage.trackingState == TrackingState.Tracking);
+            if (_instantiatedPrefabs.ContainsKey(trackedImage.referenceImage.name))
+            {
+                _instantiatedPrefabs[trackedImage.referenceImage.name].SetActive(trackedImage.trackingState == TrackingState.Tracking);
+            }
         }
 
         foreach (var trackedImage in eventArgs.removed)
         {
-            Destroy(_instantiatedPrefabs[trackedImage.referenceImage.name]);
-
-            _instantiatedPrefabs.Remove(trackedImage.referenceImage.name);
+            if (_instantiatedPrefabs.ContainsKey(trackedImage.referenceImage.name))
+            {
+                Destroy(_instantiatedPrefabs[trackedImage.referenceImage.name]);
+                _instantiatedPrefabs.Remove(trackedImage.referenceImage.name);
+            }
         }
     }
 

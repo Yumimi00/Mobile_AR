@@ -385,10 +385,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 558146987}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 975a527cbd4822748b6a75afc0de482e, type: 3}
+  m_Script: {fileID: 11500000, guid: 55ee0b39c7d8a7c41ab46514b8bc8a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ArPrefabs:
+  placeablePrefabs:
   - {fileID: 8766776800783509737, guid: dedab82e3b2cb8740ba8114af6a4aa50, type: 3}
 --- !u!1 &705507993
 GameObject:
@@ -501,7 +501,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &775396736
 MonoBehaviour:
   m_ObjectHideFlags: 0

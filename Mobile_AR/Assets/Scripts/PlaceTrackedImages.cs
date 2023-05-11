@@ -41,6 +41,7 @@ public class PlaceTrackedImages : MonoBehaviour
                     var newPrefab = Instantiate(curPrefab, trackedImage.transform);
                     _instantiatedPrefabs[imageName] = newPrefab;
                     Debug.Log("Instantiated " + imageName);
+                    Debug.Log(curPrefab.transform.localPosition);
                 }
             }
         }

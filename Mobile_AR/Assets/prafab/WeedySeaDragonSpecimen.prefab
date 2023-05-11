@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8278189655667929683}
   m_Layer: 0
-  m_Name: WSD_LOW
+  m_Name: WeedySeaDragonSpecimen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

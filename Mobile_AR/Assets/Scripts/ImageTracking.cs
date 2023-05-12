@@ -11,7 +11,10 @@ public class ImageTracking : MonoBehaviour
 {
     [SerializeField]
     public GameObject[] placeablePrefabs;
-    
+
+    public GameObject WarningMenu;
+    public GameObject FunctionMenu;
+
     private Dictionary<string, GameObject> spawnedPrefabs = new Dictionary <string, GameObject>();
     private ARTrackedImageManager _trackedImageManger;
 
@@ -23,6 +26,7 @@ public class ImageTracking : MonoBehaviour
         {
             GameObject newPrefab = Instantiate(prefab, Vector3.zero, Quaternion.identity);
             newPrefab.name = prefab.name;
+            newPrefab.transform.Rotate(90, 0, 0); // This line is edited by myself
             spawnedPrefabs.Add(prefab.name, newPrefab);
         }
     }
@@ -42,6 +46,9 @@ public class ImageTracking : MonoBehaviour
         foreach (ARTrackedImage trackedImage in eventArgs.added)
         {
             UpadateImage(trackedImage);
+            WarningMenu.SetActive(false);
+            FunctionMenu.SetActive(true);
+
         }
         foreach (ARTrackedImage trackedImage in eventArgs.updated)
         {
@@ -50,6 +57,9 @@ public class ImageTracking : MonoBehaviour
         foreach (ARTrackedImage trackedImage in eventArgs.removed)
         {
             spawnedPrefabs[trackedImage.name].SetActive(false);
+            WarningMenu.SetActive(true);
+            FunctionMenu.SetActive(false);
+
         }
     }
 

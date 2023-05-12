@@ -1,26 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
 public class GameManager : MonoBehaviour
 {
-    public TMP_Text myText;
-    public ARTrackedImageManager trackedImageManager;
- 
+    private ImageTracking _imageTracking;
+    public GameObject warningMenu;
+    public GameObject functionMenu;
 
     void Start()
     {
-        trackedImageManager.trackedImagesChanged += OnTrackedImagesChanged;
-
-    }
-
-    void OnTrackedImagesChanged(ARTrackedImagesChangedEventArgs eventArgs)
-    {
-        
+        _imageTracking = FindObjectOfType<ImageTracking>();  
     }
 
 

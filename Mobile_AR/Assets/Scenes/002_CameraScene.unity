@@ -922,6 +922,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placeablePrefabs:
   - {fileID: 8766776800783509737, guid: dedab82e3b2cb8740ba8114af6a4aa50, type: 3}
+  WarningMenu: {fileID: 1728304182}
+  FunctionMenu: {fileID: 1479709699}
 --- !u!1 &598467252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,13 +1674,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782628375}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8166de3f07a87ea4aaca33b79c97cc0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myText: {fileID: 1953446899}
-  trackedImageManager: {fileID: 558146988}
+  warningMenu: {fileID: 1728304182}
+  functionMenu: {fileID: 1479709699}
 --- !u!4 &782628377
 Transform:
   m_ObjectHideFlags: 0
@@ -2161,7 +2163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1479709700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2940,7 +2942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1728304183
 RectTransform:
   m_ObjectHideFlags: 0

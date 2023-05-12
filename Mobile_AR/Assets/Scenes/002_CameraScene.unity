@@ -2098,8 +2098,8 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1798098004}
         m_TargetAssemblyTypeName: MobileDebug, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+        m_MethodName: Reset
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -26,7 +26,7 @@ public class ImageTracking : MonoBehaviour
         {
             GameObject newPrefab = Instantiate(prefab, Vector3.zero, Quaternion.identity);
             newPrefab.name = prefab.name;
-            newPrefab.transform.Rotate(90, 0, 0); // This line is edited by myself
+            newPrefab.transform.Rotate(-90, 0, 0); // This line is edited by myself
             spawnedPrefabs.Add(prefab.name, newPrefab);
         }
     }
